@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { NgModule, OpaqueToken, Injectable } from '@angular/core';
+import { FirebaseAppModule } from './firebase';
 
 import { AppComponent } from './app.component';
 
@@ -11,8 +10,13 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    FirebaseAppModule.initializeApp({
+      apiKey: "AIzaSyAGOGfdD7CpBD7gvGIBBTUI50G0qoRNxmQ",
+      authDomain: "reactivebase.firebaseapp.com",
+      databaseURL: "https://reactivebase.firebaseio.com",
+      storageBucket: "reactivebase.appspot.com",
+      messagingSenderId: "52563936394"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
