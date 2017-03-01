@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FirebaseApp } from './firebase/app';
 import { FirebaseAuth } from './firebase/auth';
+import { FirebaseDatabase } from './firebase/database';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,8 @@ import { FirebaseAuth } from './firebase/auth';
 })
 export class AppComponent {
   title = 'app works!';
-  constructor(app: FirebaseApp, auth: FirebaseAuth) {
+  constructor(app: FirebaseApp) {
     console.log('App loaded: ', app);
-    console.log('Auth ', auth);
     // console.log('Auth loaded: ', app.auth());
     // console.log('Database loaded: ', app.database());
   }
