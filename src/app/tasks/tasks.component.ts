@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseDatabase } from '../firebase/database';
+import { AsyncFirebaseApp } from '../firebase/async';
 
 @Component({
   selector: 'app-tasks',
@@ -8,7 +8,12 @@ import { FirebaseDatabase } from '../firebase/database';
 })
 export class TasksComponent implements OnInit {
 
-  constructor(db: FirebaseDatabase) {  debugger; }
+  constructor(asyncApp: AsyncFirebaseApp) {
+    console.log('pre-loading database & auth app');
+    asyncApp.database().then(app => {
+      console.log('post-loading database & auth app', app);
+    });
+  }
 
   ngOnInit() {
   }

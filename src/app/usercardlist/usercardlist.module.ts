@@ -1,11 +1,12 @@
+
 import { NgModule } from '@angular/core';
-import { TasksComponent } from './tasks.component';
-import { TasksRoutes } from './tasks.routes';
+import { UserCardList } from './usercardlist.component';
+import { UserCardListRoutes } from './usercardlist.routes';
 import { FirebaseAsyncAppModule } from '../firebase/async';
 
 @NgModule({
   imports: [
-    TasksRoutes,
+    UserCardListRoutes,
     FirebaseAsyncAppModule.initializeApp({
       apiKey: "AIzaSyAGOGfdD7CpBD7gvGIBBTUI50G0qoRNxmQ",
       authDomain: "reactivebase.firebaseapp.com",
@@ -14,7 +15,7 @@ import { FirebaseAsyncAppModule } from '../firebase/async';
       messagingSenderId: "52563936394"
     })
   ],
-  exports: [ TasksComponent ],
-  declarations: [ TasksComponent ]
+  exports: [ UserCardList ],
+  declarations: [ UserCardList ]
 })
-export class TasksModule {}
+export class UserCardListModule {}

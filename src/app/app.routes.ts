@@ -1,10 +1,8 @@
 import { RouterModule } from '@angular/router';
-import { TasksComponent } from './tasks/tasks.component';
-import { UserCardList } from './usercardlist/usercardlist.component';
 
 export const ROUTES = [
-  { path: '', component: UserCardList },
-  { path: 'tasks', loadChildren: './tasks/tasks.module#TasksModule' }
+  { path: 'tasks', loadChildren: './tasks/tasks.module#TasksModule' },
+  { path: 'users', loadChildren: './usercardlist/usercardlist.module#UserCardListModule' }
 ];
 
 export const AppRoutes = RouterModule.forRoot(ROUTES);
